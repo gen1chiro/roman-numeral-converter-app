@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Roman Numeral Converter</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div ></div>
+    <main class="container">
+        <h1>Roman Numeral Converter</h1>
+        <form class="input-container">
+            <label for="number">Enter a number</label>
+            <input id="number" type="number">
+            <button id="convert-btn" type="button">Convert</button>
+        </form>
+        <div class="output-container">
+            <div id="output" class="hidden"></div>
+        </div>
+    </main>
+    <script src="romanNumeral.js"></script>
 </body>
 </html>
