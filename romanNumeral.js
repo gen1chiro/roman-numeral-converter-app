@@ -33,21 +33,31 @@ const checkInput = () => {
     const inputStr = numberInput.value;
     const inputInt = parseInt(inputStr, 10);
     let msg;
+    let alert = false;
 
     if (inputStr.length === 0  || inputStr.match(/e/g)) {
          msg = "Please enter a valid number";
+         alert = true;
     } else if (inputInt > 3999) {
          msg = "Please enter a number less than or equal to 3999";
+         alert = true;
     } else if (inputInt < 1) {
          msg = "Please enter a number greater than or equal to 1";
+         alert = true;
     } else {
          msg = intToRomanNumeral(inputInt);
     }
 
-    updateUi(msg);
+    updateUi(msg, alert);
 }
 
-const updateUi = (msg) => {
+const updateUi = (msg, alert) => {
+    if (alert) {
+        output.classList.add("alert");
+        output.innerText = msg;
+        return;
+    }
+    output.classList.remove("alert");
     output.innerText = msg;
 }
 convertBtn.addEventListener("click", () => {
