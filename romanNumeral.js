@@ -52,6 +52,7 @@ const checkInput = () => {
 }
 
 const updateUi = (msg, alert) => {
+    output.classList.remove("hidden");
     if (alert) {
         output.classList.add("alert");
         output.innerText = msg;
